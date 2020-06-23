@@ -33,7 +33,7 @@ UI.prototype.addBookToList = function (book) {
 
   // Insert columns
   // Take this <tr> and append html into it. Which will be the actual columns, the <td>
-  // We are able to get this because because we passed the book into the prototype method
+  // We are able to get this because we passed the book into the prototype method
   row.innerHTML = `
   <td>${book.title}</td>
   <td>${book.author}</td>
@@ -93,7 +93,7 @@ UI.prototype.clearFields = function () {
 };
 
 
-// Event Listeners for add Book
+// Event Listeners for Add Book
 document.getElementById('book-form').addEventListener('submit', function (e) {
   // console.log('test');
 
@@ -118,14 +118,12 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
   if (title === '' || author === '' || isbn === '') {
     // alert('Failed');
     // Error alert
-    ui.showAlert('Please fill in all filds', 'error')
+    ui.showAlert('Please fill in all fields', 'error');
   } else {
     // Add book to list
     ui.addBookToList(book);
-
     // Show success
     ui.showAlert('Book Added!', 'success');
-
     // Clear Fields
     ui.clearFields();
   };
@@ -149,4 +147,4 @@ document.getElementById('book-list').addEventListener('click', function (e) {
   ui.showAlert('Book Removed!', 'success');
 
   e.preventDefault();
-})
+});
